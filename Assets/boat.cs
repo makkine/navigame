@@ -33,6 +33,7 @@ public class boat : MonoBehaviour
             Quaternion tempRot = rider.transform.rotation;
             this.transform.rotation = tempRot;
             this.transform.position = tempTransform;
+            displayInfo = false;
         }
         if (displayInfo)
         {

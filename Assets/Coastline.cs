@@ -30,6 +30,7 @@ public class Coastline : MonoBehaviour
             {
                 boat.riding = false;
                 boat.rider.m_onBoat = false;
+                displayInfo = false;
             }
 
         }
