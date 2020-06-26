@@ -25,9 +25,11 @@ public class Coastline : MonoBehaviour
         FadeText();
         if (displayInfo)
         {
+            boat.rider.transform.position = boat.transform.position;
             if (Input.GetKeyDown("x"))
             {
                 boat.riding = false;
+                boat.rider.m_onBoat = false;
             }
 
         }
@@ -52,7 +54,7 @@ public class Coastline : MonoBehaviour
         if (displayInfo)
         {
             myText.text = myString;
-            myText.color = Color.Lerp(myText.color, Color.white, fadeTime * Time.deltaTime);
+            myText.color = Color.white;
 
         }
 

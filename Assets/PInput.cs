@@ -21,6 +21,7 @@ public class PInput : MonoBehaviour
     protected bool m_Attack;
     protected bool m_Pause;
     protected bool m_ExternalInputBlocked;
+    public bool onBoat;
 
     public Vector2 MoveInput
     {
@@ -44,7 +45,7 @@ public class PInput : MonoBehaviour
 
     public bool JumpInput
     {
-        get { return m_Jump && !playerControllerInputBlocked && !m_ExternalInputBlocked; }
+        get { return m_Jump && !playerControllerInputBlocked && !m_ExternalInputBlocked && !onBoat; }
     }
 
     public bool Pause

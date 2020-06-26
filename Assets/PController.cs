@@ -35,6 +35,7 @@ public class PController : MonoBehaviour
     protected bool m_IsGrounded = true;            // Whether or not Ellen is currently standing on the ground.
     protected bool m_PreviouslyGrounded = true;    // Whether or not Ellen was standing on the ground last frame.
     protected bool m_ReadyToJump;                  // Whether or not the input state and Ellen are correct to allow jumping.
+    public bool m_onBoat;
     protected float m_DesiredForwardSpeed;         // How fast Ellen aims be going along the ground based on input.
     protected float m_ForwardSpeed;                // How fast Ellen is currently going along the ground.
     protected float m_VerticalSpeed;               // How fast Ellen is currently moving up or down.
@@ -175,6 +176,7 @@ public class PController : MonoBehaviour
     {
         bool inputBlocked = m_CurrentStateInfo.tagHash == m_HashBlockInput && !m_IsAnimatorTransitioning;
         inputBlocked |= m_NextStateInfo.tagHash == m_HashBlockInput;
+        m_Input.onBoat = m_onBoat;
         m_Input.playerControllerInputBlocked = inputBlocked;
     }
 

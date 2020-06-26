@@ -7,6 +7,7 @@ using System.CodeDom.Compiler;
 public class boat : MonoBehaviour
 {
     public PController rider;
+
     public string myString;
     public Text myText;
     public float fadeTime;
@@ -39,6 +40,7 @@ public class boat : MonoBehaviour
             {
                 rider.transform.position = this.transform.position;
                 riding = true;
+                rider.m_onBoat = true;
                 displayInfo = false;
             }
 
@@ -61,7 +63,7 @@ public class boat : MonoBehaviour
         if (displayInfo)
         {
             myText.text = myString;
-            myText.color = Color.Lerp(myText.color, Color.white, fadeTime * Time.deltaTime);
+            myText.color = Color.white;
 
         }
 
