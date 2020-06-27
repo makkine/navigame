@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dialogues [
+	<!ELEMENT dialogues ANY>
+	<!ELEMENT dialogue ANY>
+	<!ELEMENT text ANY>
+	<!ELEMENT options ANY>
+	<!ELEMENT option ANY>
+	<!ELEMENT goto ANY>
+	<!ATTLIST dialogue name ID #REQUIRED>
+]>
+<dialogues>
+	<dialogue name='_0'>
+		<text>How did you find me?! </text>
+		<options>
+			<option>
+				<text>I was supposed to!</text>
+				<goto>_1</goto>
+			</option>
+			<option>
+				<text>By accident!</text>
+				<goto>_2</goto>
+			</option>
+		</options>
+	</dialogue>
+	<dialogue name='_1'>
+		<text>Who told you? Tell them to leave me alone! </text>
+		<options>
+			<option>
+				<text>Ah! Got it!</text>
+				<goto>EXIT</goto>
+			</option>
+		</options>
+	</dialogue>
+	<dialogue name='_2'>
+		<text>Hm. Well, that's all right, just don't bother me! (No options test) (Remember you can walk away to stop talking) </text>
+	</dialogue>
+</dialogues>

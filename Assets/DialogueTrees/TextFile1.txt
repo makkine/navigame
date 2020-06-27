@@ -1,0 +1,33 @@
+[
+   {
+      "text":"This is the first line of dialogue. What do you think of it?",
+      "options":[
+         {
+            "text":"This sucks!",
+            "goto":1
+         },
+         {
+            "text":"It's all right?",
+            "goto":2
+         }
+      ]
+   },
+   {
+      "text":"Screw you! I tried my damn best!",
+      "options":[
+         {
+            "text":"Go back",
+            "goto":0
+         }
+      ]
+   },
+   {
+      "text":"Why thank you!",
+      "options":[
+         {
+            "text":"Go back",
+            "goto":0
+         }
+      ]
+   }
+]

@@ -14,6 +14,7 @@ public class PInput : MonoBehaviour
 
     [HideInInspector]
     public bool playerControllerInputBlocked;
+    public bool CameraInputBlocked;
 
     protected Vector2 m_Movement;
     protected Vector2 m_Camera;
@@ -21,7 +22,7 @@ public class PInput : MonoBehaviour
     protected bool m_Attack;
     protected bool m_Pause;
     protected bool m_ExternalInputBlocked;
-    public bool onBoat;
+    protected bool m_OnBoat;
 
     public Vector2 MoveInput
     {
@@ -37,7 +38,8 @@ public class PInput : MonoBehaviour
     {
         get
         {
-            if (playerControllerInputBlocked || m_ExternalInputBlocked)
+
+            if (playerControllerInputBlocked || m_ExternalInputBlocked )
                 return Vector2.zero;
             return m_Camera;
         }
@@ -45,7 +47,7 @@ public class PInput : MonoBehaviour
 
     public bool JumpInput
     {
-        get { return m_Jump && !playerControllerInputBlocked && !m_ExternalInputBlocked && !onBoat; }
+        get { return m_Jump && !playerControllerInputBlocked && !m_ExternalInputBlocked && !m_OnBoat; }
     }
 
     public bool Pause
@@ -100,5 +102,15 @@ public class PInput : MonoBehaviour
     public void GainControl()
     {
         m_ExternalInputBlocked = false;
+    }
+
+    public void GetOnBoat()
+    {
+        m_OnBoat = true;
+    }
+
+    public void GetOffBoat()
+    {
+        m_OnBoat = false;
     }
 }
