@@ -102,7 +102,7 @@ public class CameraSettings : MonoBehaviour, CameraMessageTarget
         controllerCamera.m_YAxis.m_InputAxisName = "";
     }
 
-    public void UnfreezeInput() //DO NOT CHANGE THIS OR THE CAMERA WILL NEVER BE USEABLE! 
+    public void UnfreezeInput() //DO NOT CHANGE THIS OR THE CAMERA WILL NO LONGER BE USEABLE AFTER FREEZING! 
     {
         keyboardAndMouseCamera.m_XAxis.m_InputAxisName = "CameraX";
         keyboardAndMouseCamera.m_YAxis.m_InputAxisName = "CameraY";

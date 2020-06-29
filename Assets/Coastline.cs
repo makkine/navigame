@@ -15,7 +15,6 @@ public class Coastline : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myText = GameObject.Find("Text").GetComponent<Text>();
         myText.color = Color.clear;
     }
 
@@ -29,7 +28,7 @@ public class Coastline : MonoBehaviour
             if (Input.GetKeyDown("x"))
             {
                 boat.riding = false;
-                boat.rider.m_onBoat = false;
+                boat.rider.getOffBoat();
                 displayInfo = false;
             }
 

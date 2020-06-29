@@ -14,12 +14,14 @@ public class boat : MonoBehaviour
     public bool displayInfo;
 
     public bool riding;
+
+    protected float height; //height in a scene
     
     // Start is called before the first frame update
     void Start()
     {
-        myText = GameObject.Find("Text").GetComponent<Text>();
         myText.color = Color.clear;
+        height = this.transform.position.y;
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class boat : MonoBehaviour
         if (riding)
         {
             Vector3 tempTransform = rider.transform.position;
-            tempTransform.y = -1.3f;
+            tempTransform.y = height;
             Quaternion tempRot = rider.transform.rotation;
             this.transform.rotation = tempRot;
             this.transform.position = tempTransform;
@@ -41,7 +43,7 @@ public class boat : MonoBehaviour
             {
                 rider.transform.position = this.transform.position;
                 riding = true;
-                rider.m_onBoat = true;
+                rider.getOnBoat();
                 displayInfo = false;
             }
 

@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.XR.WSA;
 using Gamekit3D;
+//using System.Diagnostics;
 
 public class PController : MonoBehaviour
 {
@@ -49,6 +50,7 @@ public class PController : MonoBehaviour
     protected Collider[] m_OverlapResult = new Collider[8];    // Used to cache colliders that are near Ellen.
     protected Renderer[] m_Renderers;              // References used to make sure Renderers are reset properly. 
     protected Checkpoint m_CurrentCheckpoint;      // Reference used to reset Ellen to the correct position on respawn.
+    protected Vector3 m_CoastPosition;              // Reference of the position at which Ellen got on/off the boat
     protected bool m_Respawning;                   // Whether Ellen is currently respawning.
     protected float m_IdleTimer;                   // Used to count up to Ellen considering a random idle.
 
@@ -447,7 +449,6 @@ public class PController : MonoBehaviour
         if (m_CurrentCheckpoint != null)
         {
             transform.position = m_CurrentCheckpoint.transform.position;
-            transform.rotation = m_CurrentCheckpoint.transform.rotation;
         }
         else
         {
@@ -468,6 +469,29 @@ public class PController : MonoBehaviour
     public void RespawnFinished()
     {
         m_Respawning = false;
+
+    }
+
+    // Sets a checkpoint at the place where you started sailing
+    public void getOnBoat()
+    {
+        m_onBoat = true;
+        m_CoastPosition = this.transform.position;
+    }
+
+    // Sets a checkpoint at the place where you docked
+    public void getOffBoat()
+    {
+        m_onBoat = false;
+        m_CoastPosition = this.transform.position;
+
+    }
+
+    // Just make the boat jump back to the coast
+    // TODO: a nicer jump, screenfades etc
+    public void SailBack()
+    {
+        this.transform.position = m_CoastPosition;
 
     }
 }
