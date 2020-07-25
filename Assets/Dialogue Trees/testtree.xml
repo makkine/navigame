@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dialogues [
+	<!ELEMENT dialogues ANY>
+	<!ELEMENT dialogue ANY>
+	<!ELEMENT text ANY>
+	<!ELEMENT options ANY>
+	<!ELEMENT option ANY>
+	<!ELEMENT goto ANY>
+	<!ELEMENT success ANY>
+	<!ELEMENT failure ANY>
+	<!ELEMENT skill ANY>
+	<!ELEMENT difficulty ANY>
+	<!ATTLIST dialogue name ID #REQUIRED>
+]>
+<dialogues>
+	<dialogue name='_0'>
+		<text>Why hello lonely traveller :0</text>
+		<options>
+			<option>
+				<text>What is your name?</text>
+				<success>_1</success>
+				<failure>_2</failure>
+				<skill>curiosity</skill>
+				<difficulty>5</difficulty>
+			</option>
+			<option>
+				<text>Did you commit the murder?</text>
+				<success>_3</success>
+				<failure>_2</failure>
+				<skill>curiosity</skill>
+				<difficulty>45</difficulty>
+			</option>
+		</options>
+	</dialogue>
+	<dialogue name='_1'>
+		<text>My name is Fred.</text>
+		<options>
+			<option>
+				<text>Go Back</text>
+				<goto>_0</goto>
+			</option>
+		</options>
+	</dialogue>
+	<dialogue name='_2'>
+		<text>No way I'm telling you that!</text>
+		<options>
+			<option>
+				<text>Go Back</text>
+				<goto>_0</goto>
+			</option>
+		</options>
+	</dialogue>
+	<dialogue name='_3'>
+		<text>Alright I'll confess! I did it.	</text>
+		<options>
+			<option>
+				<text>Go Back</text>
+				<goto>_0</goto>
+			</option>
+		</options>
+	</dialogue>
+</dialogues>

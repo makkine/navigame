@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9583ca7e96ecbbe48a3dee101dbe3fab, type: 3}
+  m_Name: PlayerStats
+  m_EditorClassIdentifier: 
+  curiosity: {x: 3000, y: 3000}
+  observation: {x: 400, y: 200}
+  reasoning: {x: 500, y: 100}
+  agility: {x: 100, y: 300}
+  strength: {x: 300, y: 600}
+  socialSense: {x: 900, y: 100}
